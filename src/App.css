@@ -1,38 +1,416 @@
+*{
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: GF;
+  src: url(./Font/grifterbold.otf);
+}
 .App {
   text-align: center;
+  width: 100vw;
+  font-family: GF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+section{
+  width: 100vw;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
+  position: fixed;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  right:0vw;
+  top:10vw;
+  font-size: 2rem;
+  padding: 15px;
+  border-radius:30px 0px 0px 30px;
+  height: 300px;
+  width: 45px;
+ backdrop-filter: invert(100%);
+}
+
+nav .active{
+  font-size: 3rem;
+ transition: all ease 0.5s;
+ animation: myAnim 10s ease 0s infinite normal forwards;
+
+}
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
+}
+.plan-btn {
+  appearance: button;
+  font-size: 1.2rem;
+  font-family: GF;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  margin: 0 5px 10px 0;
+  overflow:visible;
+  padding: 12px 40px;
+  touch-action: manipulation;
+ 
+}
+.plan-btn:hover{
+  box-shadow: 0 3px 5px inset;
+  outline: 0;
+  transform: translate(-5px,-5px);
+}
+.plan-btn:active{
+  transform: translate(3px ,3px);
+}
+
+.Marquee{
+  width: 100vw;
+  overflow: hidden;
+  background-color: black;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.Marqueep{
+  white-space: nowrap;
+  display: inline-block;
+  animation: marquee 100s linear infinite;
+}
+.Marqueep p{
+  display: inline-block;
+  font-size: 10rem;
+}
+@keyframes marquee {
+  0% {
+    transform: translate3d(10%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.Top1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Top1 h1{
+  font-size: 4rem;
+  color: white;
+}
+.Top1 p:nth-child(3){
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+}
+.Top1 p:nth-child(5){
+  font-size: 1rem;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.Top2{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Top2 h2{
+  font-size: 4rem;
+}
+.Top2 p{
+  font-size: 1.5rem;
+}
+.Services{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 60%;
+  height: auto;
+  gap:45px;
+}
+.Services li{
+  font-size:2rem;
+  list-style: none;
+  background: linear-gradient(to right, #86a8e7 0%, #91eae4 100%);
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.Services li:hover{
+  font-size: 2.5rem;
+  transition: all 1s ease;
+}
+@media only screen and (max-width:600px) {
+  nav{
+    font-size: 1.5rem;
+    height: 200px;
+    width: 35px;
   }
-  to {
-    transform: rotate(360deg);
+  nav .active{
+    font-size: 2rem;
+  }
+  .Top h1{
+    font-size: 3rem;
+  }
+  .Marqueep p{
+    font-size: 7rem;
+  }
+  .Top2 h2{
+    font-size: 3rem;
+  }
+  .Services{
+    width: 80%;
+    height: auto;
+    gap:15px;
+  }
+  .Services li{
+    font-size:1.2rem;
+  }
+  
+}
+.Center{
+  display: flex;
+  flex-direction: column;
+}
+.Center1{
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Center1 h2{
+  font-size: 5rem;
+}
+.Center1 p{
+  font-size:1.2rem
+}
+
+.Benefits{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 60%;
+  font-size: 1.2rem;
+  border-radius: 10px;
+}
+.Benefits div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 25%;
+  gap: 20px;
+}
+
+.Center2{
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+}
+.Center2 span{
+  background:linear-gradient(to right, #ee9ca7 0%, #ffdde1 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.Center2 h1{
+  font-size: 4.5rem;
+}
+.Center2 p{
+  font-size: 1.7rem;
+ 
+}
+.Center2 div:nth-child(2){
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;  
+}
+@media only screen and (max-width:600px) {
+  .Center1 h2{
+    font-size: 3rem;
+  }
+  .Benefits{
+    width: 90%;
+  }
+  .Benefits div {
+    width: 35%;
+    gap: 30px;
+  }
+  .Center2{
+    flex-direction: column;
+  }
+  .Center2 h1{
+    font-size: 3rem;
+  }
+  .Center2 p{
+    font-size: 1.2rem;
+   
+  }
+
+}
+
+
+.End{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.End section{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.End section:nth-child(4){
+  background-color: black;
+  color: white;
+}
+.End h4{
+  font-size: 5rem;
+  background: linear-gradient(to right, #f12711 0%, #f5af19 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.End p{
+  font-size: 2rem;
+}
+.End h5{
+  font-size: 1.1rem;
+}
+
+.End a{
+  color: black;
+}
+
+.End div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.End li {
+ text-align: left;
+}
+@media only screen and (max-width:600px) {
+  .End{
+    height: 120vh;
+    flex-direction: column;
+  }
+  .End section{
+    flex-direction: column;
+  }
+  .End h4{
+    font-size: 3rem;
+  }
+  .End p{
+    font-size: 1.2rem;
+  }
+  .End h5{
+    font-size: 1rem;
+  }
+  .End li {
+    font-size: 0.8rem;
+    list-style: none;
+   }
+}
+
+.Footer{
+  height: 100vh;
+  background-color: black;
+    background-image: url(data:image/png;base64,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);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.Footer h1{
+  font-size: 4rem;
+}
+.Footer p{
+font-size:1.5rem;
+}
+.Footer button{
+  color: white;
+  background-color: transparent;
+  border-color: white;
+  width: 60%;
+  height: 20%;
+  font-size: 4rem;
+}
+.Footer div{
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+ justify-content: space-evenly;
+}
+.Footer a{
+  color: white;
+}
+@media only screen and (max-width:600px){
+  .Footer button{
+    font-size: 2rem;
+    height: 15%;
+  }
+  .Footer div {
+    width: 100%;
+  }
+  .Footer a {
+    display: none;
   }
 }
