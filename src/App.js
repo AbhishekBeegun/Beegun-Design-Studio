@@ -118,8 +118,7 @@ function App() {
         </section>
         <section className="Center2">
           <div><p>What we believe</p></div>
-          <div><h1>01100100 01100001 01110100<br></br> 01100001
-          informs ,<span>Emotions</span><br></br>decides.</h1>
+          <div><h1>Data informs ,<span>Emotions</span><br></br>decides.</h1>
           <p>For us, a product has to be : <span>Simple</span> ,<br></br>
           <span>intuitive</span> and <span>structured</span> with <span>aesthetics</span> designs <br></br>
           and set the standards for others to <span>inspire</span>.<br></br>
@@ -136,7 +135,7 @@ function App() {
       <div className="End" id="end">
         <section>
           <h4>Plan 1</h4>
-          <p>Red or blue ???</p>
+          <p></p>
           <h5>Rs 225,000</h5>
           <button className="plan-btn">Get Started</button>
           <a className="Blue" href="">Book a call</a>
