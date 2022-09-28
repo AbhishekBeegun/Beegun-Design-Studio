@@ -9,6 +9,9 @@
   font-family: GF;
   src: url(./Font/grifterbold.otf);
 }
+video{
+  width: 100px;
+}
 .App {
   text-align: center;
   width: 100vw;
@@ -36,7 +39,7 @@ nav{
 }
 
 nav .active{
-  font-size: 3rem;
+  font-size: 2.5rem;
  transition: all ease 0.5s;
  animation: myAnim 10s ease 0s infinite normal forwards;
 
@@ -163,7 +166,7 @@ nav .active{
   font-size: 4rem;
 }
 .Top2 p{
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 .Services{
   display: flex;
@@ -240,6 +243,11 @@ nav .active{
 .Center1 p{
   font-size:1.2rem
 }
+.Center1 .plan-btn{
+  background-color: white;
+  color: black;
+  border-color: white;
+}
 
 .Benefits{
   display: flex;
@@ -247,7 +255,7 @@ nav .active{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 50%;
   height: 60%;
   font-size: 1.2rem;
   border-radius: 10px;
@@ -281,6 +289,8 @@ nav .active{
 .Center2 p{
   font-size: 1.7rem;
  
+}
+.Center2 div:nth-child(1){
 }
 .Center2 div:nth-child(2){
   display: flex;
