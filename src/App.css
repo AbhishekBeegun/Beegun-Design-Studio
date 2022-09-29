@@ -298,6 +298,9 @@ nav .active{
   justify-content: space-evenly;  
 }
 @media only screen and (max-width:600px) {
+  video{
+    width: 50px;
+  }
   .Center1 h2{
     font-size: 3rem;
   }
